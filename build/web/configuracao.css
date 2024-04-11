@@ -1,6 +1,6 @@
 header{
     width:100%;
-    background-color: #c0c0c0;
+    background-color: #b8c0ff;
     padding: 10px;
 }
 
@@ -38,4 +38,11 @@ footer{
     width:100%;
     padding: 10px;
     background-color: #ffb3b3;
+}
+
+.sobre{
+    text-align: justify;
+    margin-right: 100px;
+    margin-left: 1000px;
+    
 }
