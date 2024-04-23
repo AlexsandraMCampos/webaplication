@@ -48,11 +48,15 @@
         st.setDouble(4,preco);  
         st.executeUpdate ();// executa o comando INSERT
         out.print("<p><strong>Produto cadastrado com sucesso...</strong<p>");
-          }catch(Exception x){ out.print("Mensagem de erro: " + x.getMessage());
-          
+          }catch(Exception x){ 
+          String erro = x.getMessage();
+          if(erro.contains("Duplicate entry")){
+           out.print("<p sytle='color:blue;font-size:25px'>Este produto já está cadastrado.</p>");
+          }else{
+          out.print("<p style='color:red;font-size:25px'>Mensagem de erro: " + erro + "</p>");          
           }
-          
+          }
          
           %>
     </body>
-</html>
+</html> 

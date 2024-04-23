@@ -9,9 +9,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listagem de Produtos</title>
+        <link rel="stylesheet" href="tabela.css">
     </head>
     <body>
         <%
+
             // fazendo a conexão com o banco de dados 
             Connection conecta;
             PreparedStatement st;
@@ -22,8 +24,6 @@
             String password = "";
 
             conecta = DriverManager.getConnection(url, user, password);
-            
-       
 
             // os dados da tabela produto do BD            
             String sql = ("SELECT * FROM produto");
@@ -34,18 +34,19 @@
         %>
 
         <table border="1">  
-       
-           
+
+
             <tr>  
                 <th>Código</th>
                 <th>Nome</th>
                 <th>Marca</th>
                 <th>Preço</th>
+                <th>Excluir</th>  
             </tr>
             <%
                 while (rs.next()) {
             %>  
-            
+
             <tr>
                 <td>
                     <%=rs.getString("codigo")%>
@@ -60,6 +61,10 @@
 
                 <td>
                     <%=rs.getString("preco")%>
+                </td> 
+
+                <td>
+                    <a href="excpro.jsp?codigo=<%=rs.getString("codigo")%>">Excluir</a>
                 </td> 
             </tr>
 
