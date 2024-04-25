@@ -27,8 +27,7 @@
             marca = request.getParameter("marca");
              preco = Double.parseDouble(request.getParameter("preco"));
              
-             try{
-             
+             try{         
           
              
         Connection conecta;
